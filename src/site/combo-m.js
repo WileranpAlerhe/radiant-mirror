@@ -332,41 +332,4 @@
 		ppSeguir(ppDestino());
 	};
 
-	/* ---------- Agendamento (mantido como opção secundária) ---------- */
-
-	if (ppBarra) {
-		var ppBtnAgendar = document.createElement("button");
-		ppBtnAgendar.type = "button";
-		ppBtnAgendar.className = "pp-agendar";
-		ppBtnAgendar.textContent = "Prefiro agendar a entrega";
-		ppBarra.parentNode.appendChild(ppBtnAgendar);
-
-		ppBtnAgendar.addEventListener("click", function () {
-			if (!ppValidar()) return;
-			var destino = ppDestino();
-
-			if (typeof window.Swal === "undefined") {
-				ppSeguir(destino);
-				return;
-			}
-
-			window.Swal.fire({
-				title: "Selecione o dia e a hora",
-				text: "Deixe seu pedido agendado e receba na hora combinada.",
-				confirmButtonText: "Agendar pedido",
-				confirmButtonColor: "#1f7a45",
-				showCancelButton: true,
-				cancelButtonText: "Cancelar",
-				input: "datetime-local"
-			}).then(function (resultado) {
-				if (!resultado.isConfirmed) return;
-				ppEvento("add_to_cart", {
-					currency: "BRL",
-					value: ppCalcularTotal(),
-					items: [{ item_name: ppNomeItem(), quantity: 1 }]
-				});
-				ppSeguir(destino);
-			});
-		});
-	}
 })();
