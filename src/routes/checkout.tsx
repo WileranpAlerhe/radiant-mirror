@@ -143,16 +143,8 @@ function CheckoutPage() {
 
   const cepCompleto = f.cep.replace(/\D/g, "").length === 8;
 
-  const sugestoesEmail = useMemo(() => {
-    const valor = f.email.trim();
-    const at = valor.indexOf("@");
-    if (at <= 0) return [];
-    const local = valor.slice(0, at);
-    const dominio = valor.slice(at + 1).toLowerCase();
-    return DOMINIOS_EMAIL.filter((d) => d.startsWith(dominio) && d !== dominio)
-      .slice(0, 6)
-      .map((d) => `${local}@${d}`);
-  }, [f.email]);
+
+
 
   const itens = useMemo(
     () => [
