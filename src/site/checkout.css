@@ -1,0 +1,322 @@
+/* ============================================================
+   PIZZARIA DO GORDO — checkout (somente interface)
+   ============================================================ */
+
+.ck-page {
+  --pg-vinho: #9e1417;
+  --pg-vermelho: #d92b2b;
+  --pg-vermelho-escuro: #9e1417;
+  --pg-creme: #fbf9f7;
+  --pg-branco: #fff;
+  --pg-tinta: #221f1e;
+  --pg-tinta-2: #6b6461;
+  --pg-verde: #1f7a45;
+  --pg-verde-claro: #eaf6ee;
+  --pg-dourado: #b8860b;
+  --pg-borda: #ece7e3;
+  --pg-max: 560px;
+
+  min-height: 100vh;
+  background: var(--pg-creme);
+  color: var(--pg-tinta);
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.ck-page *, .ck-page *::before, .ck-page *::after { box-sizing: border-box; }
+.ck-page img { max-width: 100%; display: block; }
+.ck-page h2, .ck-page h3, .ck-page h4 { margin: 0; line-height: 1.2; }
+
+.ck-wrap { max-width: var(--pg-max); margin: 0 auto; padding: 14px; }
+
+/* ── Topo ──────────────────────────────────────────────── */
+.ck-topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--pg-vinho); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 54px; padding: 0 56px;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.03em;
+  text-align: center;
+}
+.ck-topbar-back {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #fff; text-decoration: none;
+  font-family: inherit;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 8px 10px; border: 0; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+/* ── Cartões ───────────────────────────────────────────── */
+.ck-card {
+  background: var(--pg-branco);
+  border: 1px solid var(--pg-borda);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(36, 22, 17, 0.07);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.ck-cart-head {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center; gap: 10px;
+  padding: 14px; cursor: pointer;
+}
+.ck-cart-head h2 { font-size: 0.98rem; font-weight: 800; }
+.ck-cart-head p { margin: 2px 0 0; font-size: 0.75rem; color: var(--pg-tinta-2); }
+.ck-cart-right { display: flex; align-items: center; gap: 9px; flex-shrink: 0; color: var(--pg-tinta-2); }
+.ck-cart-total { font-size: 1.05rem; font-weight: 800; color: var(--pg-vinho); }
+.ck-badge-qtd {
+  min-width: 22px; height: 22px; padding: 0 6px;
+  display: grid; place-items: center;
+  background: var(--pg-vermelho); color: #fff;
+  font-size: 0.7rem; font-weight: 800; border-radius: 999px;
+}
+.ck-cart-body { padding: 0 14px 14px; border-top: 1px solid var(--pg-borda); }
+.ck-cart-line {
+  display: flex; justify-content: space-between; gap: 12px;
+  font-size: 0.82rem; color: var(--pg-tinta-2);
+  padding: 9px 0; border-bottom: 1px dashed #f0e8db;
+}
+.ck-cart-line:last-child { border-bottom: 0; }
+.ck-cart-line strong { color: var(--pg-tinta); }
+
+/* ── Etapas ────────────────────────────────────────────── */
+.ck-steps {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px;
+}
+.ck-step-dot {
+  width: 28px; height: 28px; flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 50%; background: #f0e8db; color: var(--pg-tinta-2);
+  font-size: 0.78rem; font-weight: 800;
+}
+.ck-step-dot.is-active { background: var(--pg-vermelho); color: #fff; }
+.ck-step-dot.is-done { background: var(--pg-verde); color: #fff; }
+.ck-step-label { font-size: 0.8rem; font-weight: 700; }
+.ck-step-line { flex: 1; height: 2px; background: #eee2d2; border-radius: 2px; }
+
+/* ── Seções do formulário ──────────────────────────────── */
+.ck-section {
+  background: var(--pg-branco);
+  border: 1px solid var(--pg-borda);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(36, 22, 17, 0.07);
+  margin-bottom: 12px;
+}
+.ck-section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.ck-section-title h3 {
+  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+.ck-field { margin-bottom: 12px; }
+.ck-field label {
+  display: block; font-size: 0.78rem; font-weight: 700;
+  color: var(--pg-tinta-2); margin-bottom: 5px;
+}
+.ck-field input,
+.ck-field select {
+  width: 100%; min-height: 48px;
+  border: 1px solid var(--pg-borda); border-radius: 12px;
+  background: var(--pg-creme); color: var(--pg-tinta);
+  font-family: inherit; font-size: 0.92rem; padding: 0 12px;
+}
+.ck-field input:focus,
+.ck-field select:focus { outline: 2px solid var(--pg-vinho); background: #fff; }
+.ck-field input:disabled, .ck-field select:disabled { opacity: 0.6; }
+.ck-invalid input, .ck-invalid select { border-color: var(--pg-vermelho); background: #fdf5f5; }
+.ck-error {
+  display: flex; align-items: center; gap: 6px; margin-top: 5px;
+  font-size: 0.74rem; font-weight: 600; color: var(--pg-vermelho-escuro);
+}
+.ck-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ck-check {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 600; color: var(--pg-tinta-2); margin-bottom: 12px;
+}
+.ck-check input { width: 18px; height: 18px; accent-color: var(--pg-vermelho); }
+.ck-hint { font-size: 0.78rem; color: var(--pg-tinta-2); margin: 0 0 12px; }
+.ck-hint a { color: var(--pg-vinho); font-weight: 700; }
+
+/* ── Frete ─────────────────────────────────────────────── */
+.ck-frete-title { font-size: 0.85rem; font-weight: 700; margin: 16px 0 8px; }
+.ck-frete {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; gap: 10px;
+  border: 1px solid var(--pg-verde); background: var(--pg-verde-claro);
+  border-radius: 12px; padding: 12px;
+}
+.ck-frete strong { display: block; font-size: 0.87rem; }
+.ck-frete small { font-size: 0.74rem; color: var(--pg-tinta-2); }
+.ck-frete-preco { font-size: 0.85rem; font-weight: 800; color: var(--pg-verde); }
+.ck-frete-obs { font-size: 0.72rem; color: var(--pg-tinta-2); margin: 8px 0 0; }
+.ck-radio {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--pg-verde); display: grid; place-items: center; flex-shrink: 0;
+}
+.ck-radio span { width: 10px; height: 10px; border-radius: 50%; background: var(--pg-verde); }
+
+/* ── Pix ───────────────────────────────────────────────── */
+.ck-pix-box { border: 1px solid var(--pg-borda); border-radius: 14px; padding: 14px; }
+.ck-pix-head { display: flex; align-items: center; gap: 10px; }
+.ck-pix-mark {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: url(/assets/img/pix-icone.png) center/contain no-repeat;
+}
+.ck-pix-logo { font-size: 1.05rem; font-weight: 800; color: #0f8a80; }
+.ck-pix-text { font-size: 0.8rem; color: var(--pg-tinta-2); margin: 10px 0 0; }
+.ck-lembre {
+  background: var(--pg-creme); border-radius: 12px; padding: 12px; margin-top: 12px;
+  font-size: 0.78rem; color: var(--pg-tinta-2);
+}
+.ck-lembre ul { margin: 6px 0 0; padding-left: 18px; }
+.ck-valor { font-size: 0.95rem; margin: 14px 0 0; }
+.ck-valor strong { color: var(--pg-vinho); font-size: 1.15rem; font-weight: 800; }
+
+/* ── Ofertas ───────────────────────────────────────────── */
+.ck-ofertas-title { font-size: 0.85rem; font-weight: 700; margin: 16px 0 10px; }
+.ck-ofertas-title em { font-style: normal; color: var(--pg-vermelho); }
+.ck-oferta {
+  border: 1px solid var(--pg-borda); border-radius: 14px;
+  padding: 12px; margin-bottom: 10px; text-align: center;
+}
+.ck-oferta.is-on { border-color: var(--pg-verde); background: var(--pg-verde-claro); }
+.ck-oferta img { width: 88px; height: 88px; object-fit: contain; margin: 0 auto 8px; }
+.ck-oferta h4 { font-size: 0.88rem; font-weight: 700; }
+.ck-oferta-de { font-size: 0.75rem; color: #9c8d84; text-decoration: line-through; margin-right: 6px; }
+.ck-oferta-por { font-size: 1rem; font-weight: 800; color: var(--pg-vinho); }
+.ck-btn-oferta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 44px; margin-top: 10px;
+  background: var(--pg-vinho); color: #fff; border: 0; border-radius: 12px;
+  font-family: inherit; font-size: 0.82rem; font-weight: 700; cursor: pointer;
+}
+.ck-oferta.is-on .ck-btn-oferta { background: var(--pg-verde); }
+.ck-box {
+  width: 18px; height: 18px; border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25); display: grid; place-items: center; font-size: 0.7rem;
+}
+.ck-oferta-nota { font-size: 0.72rem; color: var(--pg-tinta-2); margin: 8px 0 0; }
+
+/* ── Botões e alertas ──────────────────────────────────── */
+.ck-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 54px; margin-top: 14px;
+  background: var(--pg-vermelho); color: #fff; border: 0; border-radius: 14px;
+  font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+.ck-btn:active { transform: scale(0.99); background: var(--pg-vermelho-escuro); }
+.ck-btn:focus-visible { outline: 3px solid var(--pg-dourado); outline-offset: 2px; }
+.ck-btn[disabled] { opacity: 0.75; cursor: progress; }
+.ck-alert {
+  margin-top: 12px; padding: 12px; border-radius: 12px;
+  background: #fdecec; color: var(--pg-vermelho-escuro);
+  font-size: 0.8rem; font-weight: 600;
+}
+
+/* ── Tela final do Pix ─────────────────────────────────── */
+.ck-pix-final { text-align: center; }
+.ck-pix-final h2 { font-size: 1.25rem; font-weight: 800; margin-top: 12px; }
+.ck-pix-final > p { font-size: 0.85rem; color: var(--pg-tinta-2); margin-top: 8px; }
+.ck-qr-card {
+  background: var(--pg-branco); border: 1px solid var(--pg-borda);
+  border-radius: 16px; padding: 16px; margin-top: 16px;
+  box-shadow: 0 6px 18px rgba(36, 22, 17, 0.07);
+}
+.ck-qr-card h3 { font-size: 0.9rem; font-weight: 700; }
+.ck-qr-card img { width: 220px; height: 220px; margin: 14px auto; }
+.ck-copy-code {
+  background: var(--pg-creme); border: 1px dashed var(--pg-borda); border-radius: 12px;
+  padding: 10px; font-size: 0.7rem; color: var(--pg-tinta-2);
+  word-break: break-all; text-align: left; max-height: 96px; overflow: auto;
+}
+.ck-btn-copy {
+  width: 100%; min-height: 50px; margin-top: 12px;
+  background: var(--pg-verde); color: #fff; border: 0; border-radius: 14px;
+  font-family: inherit; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+}
+.ck-pix-info { font-size: 0.82rem; color: var(--pg-tinta-2); margin-top: 14px; }
+.ck-pix-info span { font-weight: 700; color: var(--pg-tinta); }
+.ck-status {
+  margin-top: 12px; padding: 10px; border-radius: 12px;
+  background: #fdf6e8; color: #8a6410; font-size: 0.8rem; font-weight: 600;
+}
+.ck-status.is-paid { background: var(--pg-verde-claro); color: var(--pg-verde); }
+.ck-pix-passos {
+  margin-top: 14px; text-align: left;
+  font-size: 0.78rem; color: var(--pg-tinta-2); line-height: 1.7;
+}
+
+/* ── Rodapé ────────────────────────────────────────────── */
+.ck-footer {
+  background: var(--pg-tinta); color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px; padding: 22px 14px calc(24px + env(safe-area-inset-bottom));
+  text-align: center; font-size: 0.75rem;
+}
+.ck-footer .ck-pix-logo-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 8px 0; }
+.ck-seguro {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; padding: 7px 14px;
+  font-size: 0.72rem; font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  .ck-page { --pg-max: 640px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-page * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+}
+
+/* ── Nota abaixo do botão final ────────────────────────── */
+.ck-nota-final {
+  margin: 10px 0 0;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--pg-tinta-2);
+  text-align: center;
+}
+
+/* ícones SVG estáticos */
+i.fa-i{display:inline-flex;align-items:center;justify-content:center;width:1em;height:1em;line-height:1;vertical-align:-0.125em;flex-shrink:0}
+i.fa-i svg{width:1em;height:1em;display:block;fill:currentColor}
+
+/* ── Autocomplete de e-mail ────────────────────────────── */
+.ck-autocomplete { position: relative; }
+.ck-sugestoes {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  max-height: 220px;
+  overflow-y: auto;
+}
+.ck-sugestoes li { margin: 0; }
+.ck-sugestoes button {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--pg-tinta);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.ck-sugestoes button:hover, .ck-sugestoes button:focus { background: #f5f0ea; }
