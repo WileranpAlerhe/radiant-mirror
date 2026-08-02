@@ -171,6 +171,8 @@
   mask: url(/assets/img/pix-icone.png) center/contain no-repeat;
 }
 .ck-footer .ck-pix-mark { background-color: #2ebfb3; }
+.ck-pix-img { display: block; height: 26px; width: auto; background: transparent; }
+
 
 .ck-pix-logo { font-size: 1.05rem; font-weight: 800; color: #0f8a80; }
 .ck-pix-text { font-size: 0.8rem; color: var(--pg-tinta-2); margin: 10px 0 0; }
