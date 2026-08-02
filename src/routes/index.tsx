@@ -1,24 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { StaticPage } from "@/components/StaticPage";
+import html from "@/site/home.html?raw";
+import css from "@/site/home.css?raw";
+import js from "@/site/home.js?raw";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "PIZZARIA DO GORDO — Delivery de Pizza" },
+      {
+        name: "description",
+        content:
+          "Combos de pizza com refrigerante 2L, borda recheada grátis e entrega grátis na sua região. Peça agora na Pizzaria do Gordo.",
+      },
+      { property: "og:title", content: "PIZZARIA DO GORDO — Delivery de Pizza" },
+      {
+        property: "og:description",
+        content: "Combos de pizza com refrigerante 2L, borda recheada grátis e entrega grátis na sua região. Peça agora na Pizzaria do Gordo.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: () => <StaticPage html={html} css={css} js={js} />,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}

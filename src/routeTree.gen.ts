@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ProdutosComboGRouteImport } from './routes/produtos/combo-g'
+import { Route as ProdutosComboGiganteRouteImport } from './routes/produtos/combo-gigante'
+import { Route as ProdutosComboMRouteImport } from './routes/produtos/combo-m'
+import { Route as ProdutosComboPRouteImport } from './routes/produtos/combo-p'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosComboGRoute = ProdutosComboGRouteImport.update({
+  id: '/produtos/combo-g',
+  path: '/produtos/combo-g',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosComboGiganteRoute = ProdutosComboGiganteRouteImport.update({
+  id: '/produtos/combo-gigante',
+  path: '/produtos/combo-gigante',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosComboMRoute = ProdutosComboMRouteImport.update({
+  id: '/produtos/combo-m',
+  path: '/produtos/combo-m',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosComboPRoute = ProdutosComboPRouteImport.update({
+  id: '/produtos/combo-p',
+  path: '/produtos/combo-p',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/produtos/combo-g': typeof ProdutosComboGRoute
+  '/produtos/combo-gigante': typeof ProdutosComboGiganteRoute
+  '/produtos/combo-m': typeof ProdutosComboMRoute
+  '/produtos/combo-p': typeof ProdutosComboPRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/produtos/combo-g': typeof ProdutosComboGRoute
+  '/produtos/combo-gigante': typeof ProdutosComboGiganteRoute
+  '/produtos/combo-m': typeof ProdutosComboMRoute
+  '/produtos/combo-p': typeof ProdutosComboPRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/produtos/combo-g': typeof ProdutosComboGRoute
+  '/produtos/combo-gigante': typeof ProdutosComboGiganteRoute
+  '/produtos/combo-m': typeof ProdutosComboMRoute
+  '/produtos/combo-p': typeof ProdutosComboPRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/produtos/combo-g'
+    | '/produtos/combo-gigante'
+    | '/produtos/combo-m'
+    | '/produtos/combo-p'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/checkout'
+    | '/produtos/combo-g'
+    | '/produtos/combo-gigante'
+    | '/produtos/combo-m'
+    | '/produtos/combo-p'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/produtos/combo-g'
+    | '/produtos/combo-gigante'
+    | '/produtos/combo-m'
+    | '/produtos/combo-p'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ProdutosComboGRoute: typeof ProdutosComboGRoute
+  ProdutosComboGiganteRoute: typeof ProdutosComboGiganteRoute
+  ProdutosComboMRoute: typeof ProdutosComboMRoute
+  ProdutosComboPRoute: typeof ProdutosComboPRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +117,52 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/combo-g': {
+      id: '/produtos/combo-g'
+      path: '/produtos/combo-g'
+      fullPath: '/produtos/combo-g'
+      preLoaderRoute: typeof ProdutosComboGRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/combo-gigante': {
+      id: '/produtos/combo-gigante'
+      path: '/produtos/combo-gigante'
+      fullPath: '/produtos/combo-gigante'
+      preLoaderRoute: typeof ProdutosComboGiganteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/combo-m': {
+      id: '/produtos/combo-m'
+      path: '/produtos/combo-m'
+      fullPath: '/produtos/combo-m'
+      preLoaderRoute: typeof ProdutosComboMRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/combo-p': {
+      id: '/produtos/combo-p'
+      path: '/produtos/combo-p'
+      fullPath: '/produtos/combo-p'
+      preLoaderRoute: typeof ProdutosComboPRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutRoute: CheckoutRoute,
+  ProdutosComboGRoute: ProdutosComboGRoute,
+  ProdutosComboGiganteRoute: ProdutosComboGiganteRoute,
+  ProdutosComboMRoute: ProdutosComboMRoute,
+  ProdutosComboPRoute: ProdutosComboPRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

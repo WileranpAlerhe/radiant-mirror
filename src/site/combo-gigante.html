@@ -1,0 +1,431 @@
+<div class="pp-container">
+		<a class="pp-voltar" href="/" title="Voltar" onclick="if(window.history.length>1){event.preventDefault();window.history.back();}">
+			<i class="fa-i" aria-hidden="true"><svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></i> VOLTAR
+		</a>
+
+		<div class="pp-produto">
+			<div class="pp-produto-topo">
+				<figure>
+					<img src="/assets/img/pp-combo-gigante.png" fetchpriority="high" decoding="async" alt="2 Pizzas GG + 1 Refrigerante 2L">
+				</figure>
+				<h1>2 Pizzas GG + 1 Refrigerante 2L</h1>
+				<span class="pp-brinde">Borda Recheada <b class="pp-brinde-valor">GRÁTIS</b></span>
+				<span class="pp-linha-preco"><span class="pp-preco-antigo">De R$ 129,90</span></span>
+				<span class="pp-preco" id="ppPrecoBase" data-pp-preco="75.90">Por R$ 75,90</span><br>
+			</div>
+
+			<section class="pp-grupo" data-pp-max="2">
+				<div class="pp-grupo-topo">
+					<div>
+						<h3>Primeira Pizza - Meio a Meio:</h3>
+						<span class="pp-grupo-detalhe">Escolha até 2 opções</span>
+					</div>
+					<div class="pp-grupo-status">
+						<span><span class="pp-grupo-contador">0</span>/2</span>
+						<i class="fa-i" aria-hidden="true"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg></i>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Calabresa</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, calabresa e cebola.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Mussarela</b>
+						<span class="pp-opcao-desc">Molho de tomate e bastante queijo mussarela.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Portuguesa</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, presunto, ovo, cebola, pimentão e azeitona.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Frango com Catupiry</b>
+						<span class="pp-opcao-desc">Frango desfiado temperado com catupiry.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Pepperoni</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e pepperoni.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Quatro Queijos</b>
+						<span class="pp-opcao-desc">Mistura de queijos (mussarela, parmesão, provolone e gorgonzola).</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Marguerita</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, tomate e manjericão fresco.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Bacon</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e bastante bacon crocante.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Palmito</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e palmitos.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Toscana</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e calabresa em rodelas.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Peruana</b>
+						<span class="pp-opcao-desc">Molho de tomate, atum, cebola e mussarela derretida.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Atum</b>
+						<span class="pp-opcao-desc">Molho de tomate, atum e rodelas de cebola levemente douradas.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Brócolis</b>
+						<span class="pp-opcao-desc">Molho de tomate, brócolis e mussarela derretida.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+			</section>
+			<section class="pp-grupo" data-pp-max="2">
+				<div class="pp-grupo-topo">
+					<div>
+						<h3>Segunda Pizza - Meio a Meio:</h3>
+						<span class="pp-grupo-detalhe">Escolha até 2 opções</span>
+					</div>
+					<div class="pp-grupo-status">
+						<span><span class="pp-grupo-contador">0</span>/2</span>
+						<i class="fa-i" aria-hidden="true"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg></i>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Calabresa</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, calabresa e cebola.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Mussarela</b>
+						<span class="pp-opcao-desc">Molho de tomate e bastante queijo mussarela.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Portuguesa</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, presunto, ovo, cebola, pimentão e azeitona.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Frango com Catupiry</b>
+						<span class="pp-opcao-desc">Frango desfiado temperado com catupiry.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Pepperoni</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e pepperoni.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Quatro Queijos</b>
+						<span class="pp-opcao-desc">Mistura de queijos (mussarela, parmesão, provolone e gorgonzola).</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Marguerita</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela, tomate e manjericão fresco.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Bacon</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e bastante bacon crocante.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Palmito</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e palmitos.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Toscana</b>
+						<span class="pp-opcao-desc">Molho de tomate, mussarela e calabresa em rodelas.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Peruana</b>
+						<span class="pp-opcao-desc">Molho de tomate, atum, cebola e mussarela derretida.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Atum</b>
+						<span class="pp-opcao-desc">Molho de tomate, atum e rodelas de cebola levemente douradas.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Brócolis</b>
+						<span class="pp-opcao-desc">Molho de tomate, brócolis e mussarela derretida.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+			</section>
+			<section class="pp-grupo" data-pp-max="2">
+				<div class="pp-grupo-topo">
+					<div>
+						<h3>Escolha seu refrigerante:</h3>
+						<span class="pp-grupo-detalhe">Escolha até 2 opções</span>
+					</div>
+					<div class="pp-grupo-status">
+						<span><span class="pp-grupo-contador">0</span>/2</span>
+						<i class="fa-i" aria-hidden="true"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg></i>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Coca-Cola 2L</b>
+						<span class="pp-opcao-desc">Refrigerante clássico, sabor refrescante e famoso mundialmente.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Coca-Cola Zero 2L</b>
+						<span class="pp-opcao-desc">Refrescante, sem calorias e zero açúcar.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Fanta Laranja 2L</b>
+						<span class="pp-opcao-desc">Sabor cítrico e refrescante, uma das preferidas para acompanhar comidas.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Guaraná Antarctica 2L</b>
+						<span class="pp-opcao-desc">Refrigerante de guaraná com sabor único e tradicional.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Sprite 2L</b>
+						<span class="pp-opcao-desc">Refrigerante refrescante, sabor limão com gás.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Pepsi 2L</b>
+						<span class="pp-opcao-desc">Sabor doce e refrescante, ideal para todas as refeições.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+				<div class="pp-opcao" data-pp-preco="0.00">
+					<div class="pp-opcao-nome">
+						<b>Schweppes Citrus 2L</b>
+						<span class="pp-opcao-desc">Refresco cítrico e levemente amargo, para quem busca algo diferente.</span>
+					</div>
+					<div class="pp-qtde">
+						<button class="pp-btn-menos" type="button" aria-label="Remover"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></i></button>
+						<input type="text" value="0" disabled="">
+						<button class="pp-btn-mais" type="button" aria-label="Adicionar"><i class="fa-i" aria-hidden="true"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></i></button>
+					</div>
+				</div>
+			</section>
+
+			<div class="pp-obs-area">
+				<label for="ppObservacao">Adicionar algum detalhe?</label>
+				<input id="ppObservacao" type="text" name="observacao" placeholder="Escreva o detalhe aqui ..." maxlength="140">
+				<em><span id="ppObsContador">0</span>/140</em>
+			</div>
+		</div>
+	</div>
+
+	<div class="pp-barra-finalizar">
+		<div class="pp-container">
+			<div class="pp-total" id="ppTotal">R$&nbsp;75,90</div>
+			<button class="pp-btn-finalizar" type="button" onclick="ppFinalizar()">FINALIZAR PEDIDO</button>
+			<a href="https://checkout.forneriafinalizar.shop/VCCL1O8SD28G?utm_source=jLj6a6a8ef3590bc010a19f56be&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=%3A%3ACjwKCAjwyabTBhBFEiwAM3mNUDF7WgIjKcns8lzaOXnmaf6piDV0bpAGgKtM848JwboaKSrvEQgcyBoCtIoQAvD_BwE%3A%3A&amp;utm_term=&amp;gclid=CjwKCAjwyabTBhBFEiwAM3mNUDF7WgIjKcns8lzaOXnmaf6piDV0bpAGgKtM848JwboaKSrvEQgcyBoCtIoQAvD_BwE&amp;gbraid=0AAAABEPmjQ9SssPCSt54cqWW40lZVY1ls" id="ppCheckout" style="display: none;"></a>
+		</div>
+	</div>
