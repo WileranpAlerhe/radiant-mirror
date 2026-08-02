@@ -34,7 +34,7 @@ body { background: #fbf9f7; }
 
   max-width: var(--pg-max);
   margin: 0 auto;
-  padding: 0 14px calc(120px + env(safe-area-inset-bottom));
+  padding: 0 14px calc(110px + min(env(safe-area-inset-bottom), 14px));
   font-family: "Poppins", system-ui, -apple-system, sans-serif;
   color: var(--pg-tinta);
   font-size: 16px;
@@ -187,7 +187,8 @@ body { background: #fbf9f7; }
   background: var(--pg-branco);
   border-top: 1px solid var(--pg-borda);
   box-shadow: 0 -3px 12px rgba(36, 22, 17, 0.1);
-  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+  padding: 6px 0;
+  padding-bottom: calc(6px + min(env(safe-area-inset-bottom), 14px));
 }
 .pp-barra-finalizar .pp-container {
   padding: 0 14px;
