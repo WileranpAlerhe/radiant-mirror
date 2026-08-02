@@ -230,7 +230,10 @@
   box-shadow: 0 6px 18px rgba(36, 22, 17, 0.07);
 }
 .ck-qr-card h3 { font-size: 0.9rem; font-weight: 700; }
-.ck-qr-card img { width: 220px; height: 220px; margin: 14px auto; }
+.ck-qr-card img {
+  display: block; width: 220px; height: 220px; max-width: 100%;
+  margin: 14px auto; background: transparent;
+}
 .ck-copy-code {
   background: var(--pg-creme); border: 1px dashed var(--pg-borda); border-radius: 12px;
   padding: 10px; font-size: 0.7rem; color: var(--pg-tinta-2);
