@@ -564,8 +564,8 @@ function CheckoutPage() {
                 <span className="ck-radio">
                   <span />
                 </span>
-                <span className="ck-pix-mark" />
-                <span className="ck-pix-logo">PIX</span>
+                <img className="ck-pix-img" src="/assets/img/pix-logo-full.png" alt="Pix" />
+
               </div>
               <p className="ck-pix-text">
                 Os pagamentos efetuados via Pix não podem ser parcelados. Seu produto será reservado
