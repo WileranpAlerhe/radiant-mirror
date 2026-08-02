@@ -176,7 +176,13 @@ function CheckoutPage() {
 
   useEffect(() => {
     if (!pix?.copypaste) return;
-    QRCode.toDataURL(pix.copypaste, { margin: 1, width: 440 }).then(setQr).catch(console.error);
+    QRCode.toDataURL(pix.copypaste, {
+      margin: 1,
+      width: 440,
+      color: { dark: "#241611ff", light: "#00000000" },
+    })
+      .then(setQr)
+      .catch(console.error);
   }, [pix?.copypaste]);
 
   useEffect(() => {
