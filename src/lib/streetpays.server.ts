@@ -5,8 +5,7 @@ const API_BASE = "https://api.streetpays.com.br/v1";
 const FALLBACK_API_KEY = "f6_VD0QXcr64pndCGiQhWWx806uu-g4pjXcI70AJF1c";
 
 function authHeaders() {
-  const token = process.env.STREETPAYS_API_KEY || FALLBACK_API_KEY;
-  if (!token) throw new Error("STREETPAYS_API_KEY não configurada");
+  const token = process.env["STREETPAYS_API_KEY"] || FALLBACK_API_KEY;
   return {
     Authorization: `Bearer ${token}`,
     accept: "application/json",
@@ -14,33 +13,36 @@ function authHeaders() {
   };
 }
 
-export async function streetpaysCreatePayment(body: unknown) {
-  const response = await fetch(`${API_BASE}/payment`, {
-    method: "POST",
-    headers: authHeaders(),
-    body: JSON.stringify(body),
-  });
+async function request(path: string, init: RequestInit, tentativas = 2): Promise<unknown> {
+  let ultimoErro = "";
 
-  if (!response.ok) {
-    const errorBody = await response.text();
-    console.error(`StreetPays create payment failed [${response.status}]: ${errorBody}`);
-    throw new Error(`StreetPays [${response.status}]: ${errorBody}`);
+  for (let i = 0; i < tentativas; i += 1) {
+    try {
+      const response = await fetch(`${API_BASE}${path}`, { ...init, headers: authHeaders() });
+      const texto = await response.text();
+
+      if (response.ok) {
+        return texto ? JSON.parse(texto) : {};
+      }
+
+      ultimoErro = `[${response.status}] ${texto}`;
+      console.error(`StreetPays ${path} falhou ${ultimoErro}`);
+
+      // erros de validacao (4xx) nao melhoram com retry
+      if (response.status >= 400 && response.status < 500) break;
+    } catch (err) {
+      ultimoErro = err instanceof Error ? err.message : String(err);
+      console.error(`StreetPays ${path} erro de rede: ${ultimoErro}`);
+    }
   }
 
-  return response.json();
+  throw new Error(ultimoErro || "Falha ao comunicar com o provedor de pagamento");
+}
+
+export async function streetpaysCreatePayment(body: unknown) {
+  return request("/payment", { method: "POST", body: JSON.stringify(body) });
 }
 
 export async function streetpaysFindPayment(id: string) {
-  const response = await fetch(`${API_BASE}/payment/${encodeURIComponent(id)}`, {
-    method: "GET",
-    headers: authHeaders(),
-  });
-
-  if (!response.ok) {
-    const errorBody = await response.text();
-    console.error(`StreetPays find payment failed [${response.status}]: ${errorBody}`);
-    throw new Error(`StreetPays [${response.status}]: ${errorBody}`);
-  }
-
-  return response.json();
+  return request(`/payment/${encodeURIComponent(id)}`, { method: "GET" });
 }
