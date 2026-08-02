@@ -263,7 +263,15 @@ function CheckoutPage() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       console.error(err);
-      setFalha("Não foi possível gerar o Pix agora. Tente novamente em instantes.");
+      const msg = err instanceof Error ? err.message : "";
+      setFalha(
+        /taxId|cpf|document/i.test(msg)
+          ? "CPF inválido. Confira os números e tente novamente."
+          : /phone|telefone/i.test(msg)
+            ? "Telefone inválido. Confira o número e tente novamente."
+            : "Não foi possível gerar o Pix agora. Tente novamente em instantes.",
+      );
+
     } finally {
       setEnviando(false);
     }
