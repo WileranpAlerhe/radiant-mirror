@@ -14,11 +14,10 @@ const createPixSchema = z.object({
   items: z.array(itemSchema).min(1).max(10),
   payer: z.object({
     name: z.string().min(2).max(120),
-    taxId: z.string().min(11).max(18),
-    email: z.string().optional().default(""),
+    taxId: z.string().min(11).max(14),
+    email: z.string().email(),
     phone: z.string().min(8).max(20),
   }),
-
   delivery: z.object({
     fee: z.number().int().min(0),
     address: z.object({
@@ -38,10 +37,6 @@ export const createPixPayment = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => createPixSchema.parse(data))
   .handler(async ({ data }) => {
     const amount = data.items.reduce((total, item) => total + item.price * item.quantity, 0);
-    const taxId = data.payer.taxId.replace(/\D/g, "");
-    const email = /^\S+@\S+\.\S+$/.test(data.payer.email)
-      ? data.payer.email
-      : `cliente${taxId}@pizzariadogordo.com`;
 
     const payment = (await streetpaysCreatePayment({
       amount,
@@ -50,18 +45,14 @@ export const createPixPayment = createServerFn({ method: "POST" })
       description: data.description,
       externalRef: `pedido_${Date.now()}`,
       payer: {
-        name: data.payer.name.trim(),
-        taxId,
-        email,
+        name: data.payer.name,
+        taxId: data.payer.taxId.replace(/\D/g, ""),
+        email: data.payer.email,
         phone: data.payer.phone.replace(/\D/g, ""),
       },
       items: data.items.map((item) => ({ ...item, type: "PHYSICAL" })),
-      delivery: {
-        fee: data.delivery.fee,
-        address: { ...data.delivery.address, zipCode: data.delivery.address.zipCode.replace(/\D/g, "") },
-      },
+      delivery: data.delivery,
     })) as {
-
       id: string;
       amount: number;
       status: string;
