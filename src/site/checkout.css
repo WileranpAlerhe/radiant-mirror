@@ -166,8 +166,12 @@
 .ck-pix-head { display: flex; align-items: center; gap: 10px; }
 .ck-pix-mark {
   width: 28px; height: 28px; flex-shrink: 0;
-  background: url(/assets/img/pix-icone.png) center/contain no-repeat;
+  background: none; background-color: #0f8a80;
+  -webkit-mask: url(/assets/img/pix-icone.png) center/contain no-repeat;
+  mask: url(/assets/img/pix-icone.png) center/contain no-repeat;
 }
+.ck-footer .ck-pix-mark { background-color: #2ebfb3; }
+
 .ck-pix-logo { font-size: 1.05rem; font-weight: 800; color: #0f8a80; }
 .ck-pix-text { font-size: 0.8rem; color: var(--pg-tinta-2); margin: 10px 0 0; }
 .ck-lembre {
