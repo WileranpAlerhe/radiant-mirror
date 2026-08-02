@@ -425,51 +425,6 @@ function CheckoutPage() {
               <span className="ck-step-dot is-active">1</span>
               <h3>IDENTIFICAÇÃO</h3>
             </div>
-            <Campo label="Email" erro={erros.email}>
-              <div className="ck-autocomplete">
-                <input
-                  type="email"
-                  autoComplete="off"
-                  placeholder="seuemail@email.com"
-                  value={f.email}
-                  onChange={(e) => set("email", e.target.value)}
-                  onFocus={() => setEmailFoco(true)}
-                  onBlur={() => window.setTimeout(() => setEmailFoco(false), 250)}
-                />
-                {emailFoco && sugestoesEmail.length > 0 ? (
-                  <ul className="ck-sugestoes">
-                    {sugestoesEmail.map((s) => (
-                      <li key={s}>
-                        <button
-                          type="button"
-                          onPointerDown={(ev) => {
-                            ev.preventDefault();
-                            set("email", s);
-                            setEmailFoco(false);
-                          }}
-                          onClick={(ev) => {
-                            ev.preventDefault();
-                            set("email", s);
-                            setEmailFoco(false);
-                          }}
-                        >
-                          {s}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            </Campo>
-            <Campo label="Telefone" erro={erros.telefone}>
-              <input
-                inputMode="tel"
-                autoComplete="tel"
-                placeholder="(00) 00000-0000"
-                value={f.telefone}
-                onChange={(e) => set("telefone", maskPhone(e.target.value))}
-              />
-            </Campo>
             <Campo label="Nome completo" erro={erros.nome}>
               <input
                 autoComplete="name"
@@ -486,6 +441,16 @@ function CheckoutPage() {
                 onChange={(e) => set("cpf", maskCpf(e.target.value))}
               />
             </Campo>
+            <Campo label="Telefone" erro={erros.telefone}>
+              <input
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="(00) 00000-0000"
+                value={f.telefone}
+                onChange={(e) => set("telefone", maskPhone(e.target.value))}
+              />
+            </Campo>
+
             <button type="button" className="ck-btn" onClick={irParaEntrega}>
               IR PARA A ENTREGA
             </button>
