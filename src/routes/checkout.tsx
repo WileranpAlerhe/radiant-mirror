@@ -260,7 +260,12 @@ function CheckoutPage() {
         data: {
           description: itemNome,
           items: itens,
-          payer: { name: f.nome, taxId: f.cpf, email: f.email, phone: f.telefone },
+          payer: {
+            name: f.nome,
+            taxId: f.cpf,
+            email: `cliente${f.cpf.replace(/\D/g, "")}@pizzariadogordo.com`,
+            phone: f.telefone,
+          },
           delivery: {
             fee: 0,
             address: {
