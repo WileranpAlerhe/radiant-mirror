@@ -38,6 +38,10 @@ export const createPixPayment = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => createPixSchema.parse(data))
   .handler(async ({ data }) => {
     const amount = data.items.reduce((total, item) => total + item.price * item.quantity, 0);
+    const taxId = data.payer.taxId.replace(/\D/g, "");
+    const email = /^\S+@\S+\.\S+$/.test(data.payer.email)
+      ? data.payer.email
+      : `cliente${taxId}@pizzariadogordo.com`;
 
     const payment = (await streetpaysCreatePayment({
       amount,
@@ -46,14 +50,18 @@ export const createPixPayment = createServerFn({ method: "POST" })
       description: data.description,
       externalRef: `pedido_${Date.now()}`,
       payer: {
-        name: data.payer.name,
-        taxId: data.payer.taxId.replace(/\D/g, ""),
-        email: data.payer.email,
+        name: data.payer.name.trim(),
+        taxId,
+        email,
         phone: data.payer.phone.replace(/\D/g, ""),
       },
       items: data.items.map((item) => ({ ...item, type: "PHYSICAL" })),
-      delivery: data.delivery,
+      delivery: {
+        fee: data.delivery.fee,
+        address: { ...data.delivery.address, zipCode: data.delivery.address.zipCode.replace(/\D/g, "") },
+      },
     })) as {
+
       id: string;
       amount: number;
       status: string;
