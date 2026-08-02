@@ -30,26 +30,6 @@ const OFERTAS = [
   },
 ];
 
-const DOMINIOS_EMAIL = [
-  "gmail.com",
-  "hotmail.com",
-  "outlook.com",
-  "outlook.com.br",
-  "yahoo.com.br",
-  "yahoo.com",
-  "icloud.com",
-  "live.com",
-  "bol.com.br",
-  "uol.com.br",
-  "terra.com.br",
-  "globo.com",
-  "ig.com.br",
-  "r7.com",
-  "msn.com",
-  "me.com",
-  "protonmail.com",
-];
-
 const ESTADOS = [
   ["AC", "Acre"], ["AL", "Alagoas"], ["AP", "Amapá"], ["AM", "Amazonas"], ["BA", "Bahia"],
   ["CE", "Ceará"], ["DF", "Distrito Federal"], ["ES", "Espírito Santo"], ["GO", "Goiás"],
@@ -98,7 +78,6 @@ function CheckoutPage() {
   const itemNome = search.item || "Combo Pizzaria do Gordo";
   const itemPreco = Math.round((search.total ?? 22.9) * 100);
 
-  const [emailFoco, setEmailFoco] = useState(false);
   const [etapa, setEtapa] = useState(1);
   const [erros, setErros] = useState<Record<string, string>>({});
   const [ofertas, setOfertas] = useState<string[]>([]);
@@ -106,7 +85,7 @@ function CheckoutPage() {
   const [falha, setFalha] = useState("");
 
   const [f, setF] = useState({
-    email: "", telefone: "", nome: "", cpf: "",
+    telefone: "", nome: "", cpf: "",
     cep: "", endereco: "", numero: "", bairro: "", semNumero: false,
     complemento: "", cidade: "", estado: "", pais: "BR",
   });
@@ -143,16 +122,8 @@ function CheckoutPage() {
 
   const cepCompleto = f.cep.replace(/\D/g, "").length === 8;
 
-  const sugestoesEmail = useMemo(() => {
-    const valor = f.email.trim();
-    const at = valor.indexOf("@");
-    if (at <= 0) return [];
-    const local = valor.slice(0, at);
-    const dominio = valor.slice(at + 1).toLowerCase();
-    return DOMINIOS_EMAIL.filter((d) => d.startsWith(dominio) && d !== dominio)
-      .slice(0, 6)
-      .map((d) => `${local}@${d}`);
-  }, [f.email]);
+
+
 
   const itens = useMemo(
     () => [
@@ -222,10 +193,10 @@ function CheckoutPage() {
 
   function irParaEntrega() {
     const e: Record<string, string> = {};
-    if (!/^\S+@\S+\.\S+$/.test(f.email)) e.email = "Informe o e-mail";
-    if (f.telefone.replace(/\D/g, "").length < 10) e.telefone = "Informe o telefone";
     if (f.nome.trim().split(" ").length < 2) e.nome = "Informe o nome completo";
     if (f.cpf.replace(/\D/g, "").length !== 11) e.cpf = "Informe o CPF";
+    if (f.telefone.replace(/\D/g, "").length < 10) e.telefone = "Informe o telefone";
+
     setErros(e);
     if (Object.keys(e).length) return;
     setEtapa(2);
@@ -260,7 +231,12 @@ function CheckoutPage() {
         data: {
           description: itemNome,
           items: itens,
-          payer: { name: f.nome, taxId: f.cpf, email: f.email, phone: f.telefone },
+          payer: {
+            name: f.nome,
+            taxId: f.cpf,
+            email: `cliente${f.cpf.replace(/\D/g, "")}@pizzariadogordo.com`,
+            phone: f.telefone,
+          },
           delivery: {
             fee: 0,
             address: {
@@ -425,51 +401,6 @@ function CheckoutPage() {
               <span className="ck-step-dot is-active">1</span>
               <h3>IDENTIFICAÇÃO</h3>
             </div>
-            <Campo label="Email" erro={erros.email}>
-              <div className="ck-autocomplete">
-                <input
-                  type="email"
-                  autoComplete="off"
-                  placeholder="seuemail@email.com"
-                  value={f.email}
-                  onChange={(e) => set("email", e.target.value)}
-                  onFocus={() => setEmailFoco(true)}
-                  onBlur={() => window.setTimeout(() => setEmailFoco(false), 250)}
-                />
-                {emailFoco && sugestoesEmail.length > 0 ? (
-                  <ul className="ck-sugestoes">
-                    {sugestoesEmail.map((s) => (
-                      <li key={s}>
-                        <button
-                          type="button"
-                          onPointerDown={(ev) => {
-                            ev.preventDefault();
-                            set("email", s);
-                            setEmailFoco(false);
-                          }}
-                          onClick={(ev) => {
-                            ev.preventDefault();
-                            set("email", s);
-                            setEmailFoco(false);
-                          }}
-                        >
-                          {s}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            </Campo>
-            <Campo label="Telefone" erro={erros.telefone}>
-              <input
-                inputMode="tel"
-                autoComplete="tel"
-                placeholder="(00) 00000-0000"
-                value={f.telefone}
-                onChange={(e) => set("telefone", maskPhone(e.target.value))}
-              />
-            </Campo>
             <Campo label="Nome completo" erro={erros.nome}>
               <input
                 autoComplete="name"
@@ -486,6 +417,16 @@ function CheckoutPage() {
                 onChange={(e) => set("cpf", maskCpf(e.target.value))}
               />
             </Campo>
+            <Campo label="Telefone" erro={erros.telefone}>
+              <input
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="(00) 00000-0000"
+                value={f.telefone}
+                onChange={(e) => set("telefone", maskPhone(e.target.value))}
+              />
+            </Campo>
+
             <button type="button" className="ck-btn" onClick={irParaEntrega}>
               IR PARA A ENTREGA
             </button>
