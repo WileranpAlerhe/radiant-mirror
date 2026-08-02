@@ -30,26 +30,6 @@ const OFERTAS = [
   },
 ];
 
-const DOMINIOS_EMAIL = [
-  "gmail.com",
-  "hotmail.com",
-  "outlook.com",
-  "outlook.com.br",
-  "yahoo.com.br",
-  "yahoo.com",
-  "icloud.com",
-  "live.com",
-  "bol.com.br",
-  "uol.com.br",
-  "terra.com.br",
-  "globo.com",
-  "ig.com.br",
-  "r7.com",
-  "msn.com",
-  "me.com",
-  "protonmail.com",
-];
-
 const ESTADOS = [
   ["AC", "Acre"], ["AL", "Alagoas"], ["AP", "Amapá"], ["AM", "Amazonas"], ["BA", "Bahia"],
   ["CE", "Ceará"], ["DF", "Distrito Federal"], ["ES", "Espírito Santo"], ["GO", "Goiás"],
@@ -98,7 +78,6 @@ function CheckoutPage() {
   const itemNome = search.item || "Combo Pizzaria do Gordo";
   const itemPreco = Math.round((search.total ?? 22.9) * 100);
 
-  const [emailFoco, setEmailFoco] = useState(false);
   const [etapa, setEtapa] = useState(1);
   const [erros, setErros] = useState<Record<string, string>>({});
   const [ofertas, setOfertas] = useState<string[]>([]);
@@ -106,7 +85,7 @@ function CheckoutPage() {
   const [falha, setFalha] = useState("");
 
   const [f, setF] = useState({
-    email: "", telefone: "", nome: "", cpf: "",
+    telefone: "", nome: "", cpf: "",
     cep: "", endereco: "", numero: "", bairro: "", semNumero: false,
     complemento: "", cidade: "", estado: "", pais: "BR",
   });
