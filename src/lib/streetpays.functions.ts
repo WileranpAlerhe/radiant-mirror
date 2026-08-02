@@ -14,10 +14,11 @@ const createPixSchema = z.object({
   items: z.array(itemSchema).min(1).max(10),
   payer: z.object({
     name: z.string().min(2).max(120),
-    taxId: z.string().min(11).max(14),
-    email: z.string().email(),
+    taxId: z.string().min(11).max(18),
+    email: z.string().optional().default(""),
     phone: z.string().min(8).max(20),
   }),
+
   delivery: z.object({
     fee: z.number().int().min(0),
     address: z.object({
