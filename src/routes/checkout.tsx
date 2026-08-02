@@ -222,10 +222,10 @@ function CheckoutPage() {
 
   function irParaEntrega() {
     const e: Record<string, string> = {};
-    if (!/^\S+@\S+\.\S+$/.test(f.email)) e.email = "Informe o e-mail";
-    if (f.telefone.replace(/\D/g, "").length < 10) e.telefone = "Informe o telefone";
     if (f.nome.trim().split(" ").length < 2) e.nome = "Informe o nome completo";
     if (f.cpf.replace(/\D/g, "").length !== 11) e.cpf = "Informe o CPF";
+    if (f.telefone.replace(/\D/g, "").length < 10) e.telefone = "Informe o telefone";
+
     setErros(e);
     if (Object.keys(e).length) return;
     setEtapa(2);
